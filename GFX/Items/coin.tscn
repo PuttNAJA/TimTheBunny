@@ -47,7 +47,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "gone"
-length = 0.6
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animatedcoin:scale")
 tracks/0/interp = 1
@@ -55,7 +55,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 0.1, 0.1 ) ]
@@ -67,7 +67,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -150 ), Vector2( 0, 0 ) ]
@@ -83,7 +83,7 @@ shape = SubResource( 1 )
 [node name="Animatedcoin" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "spin"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Gone_animation" type="AnimationPlayer" parent="."]

@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	$Backsong.play()
+	pass
 
 
 func _on_Playbutton_pressed():

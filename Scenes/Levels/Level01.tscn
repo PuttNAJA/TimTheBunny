@@ -7,7 +7,7 @@
 [ext_resource path="res://GFX/Background/bg_layer1.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://GFX/Items/bronze_1.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Coin HUD.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/UI/Coin HUD.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Levels/Level01.gd" type="Script" id=9]
 [ext_resource path="res://GFX/Tileset/pass_through.tres" type="TileSet" id=10]
 [ext_resource path="res://GFX/Enemies/enemy.tscn" type="PackedScene" id=11]
