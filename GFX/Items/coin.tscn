@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://GFX/Items/bronze_1.png" type="Texture" id=1]
+[ext_resource path="res://GFX/Items/bronze_2.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Items/bronze_3.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Items/bronze_4.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Items/coin.gd" type="Script" id=5]
+[ext_resource path="res://SFX/coin_SFX.wav" type="AudioStream" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 43.0465
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "spin",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animatedcoin:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animatedcoin:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "gone"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animatedcoin:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animatedcoin:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -150 ), Vector2( 0, 0 ) ]
+}
+
+[node name="coin" type="Area2D"]
+collision_layer = 4
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Animatedcoin" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "spin"
+frame = 2
+playing = true
+
+[node name="Gone_animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/gone = SubResource( 4 )
+
+[node name="pick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
+[connection signal="animation_finished" from="Gone_animation" to="." method="_on_AnimationPlayer_animation_finished"]

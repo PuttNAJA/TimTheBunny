@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/Milky Coffee.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Levels/Gameover.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.415686, 0.0392157, 0.0392157, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 200
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 120
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 120
+font_data = ExtResource( 1 )
+
+[node name="Gameover" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -518.0
+margin_top = 124.0
+margin_right = 520.0
+margin_bottom = 339.0
+custom_colors/font_color = Color( 0.945098, 0.933333, 0.0784314, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Game Over!!"
+
+[node name="Mainmenu" type="Button" parent="."]
+margin_left = 1188.0
+margin_top = 652.0
+margin_right = 1762.0
+margin_bottom = 787.0
+custom_colors/font_color_hover = Color( 0.54902, 0.219608, 0.0235294, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.94902, 0.105882, 1 )
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "Main menu"
+flat = true
+
+[node name="Playagain" type="Button" parent="."]
+margin_left = 306.0
+margin_top = 636.0
+margin_right = 842.0
+margin_bottom = 771.0
+custom_colors/font_color_hover = Color( 0.215686, 0.917647, 0.290196, 1 )
+custom_colors/font_color_pressed = Color( 0.972549, 1, 0.0627451, 1 )
+custom_fonts/font = SubResource( 4 )
+action_mode = 0
+text = "Play again"
+flat = true
+
+[connection signal="pressed" from="Mainmenu" to="." method="_on_Mainmenu_pressed"]
+[connection signal="pressed" from="Playagain" to="." method="_on_Playagain_pressed"]

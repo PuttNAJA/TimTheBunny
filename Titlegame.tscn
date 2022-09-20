@@ -1,0 +1,309 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://GFX/Background/bg_layer2.png" type="Texture" id=1]
+[ext_resource path="res://GFX/Background/bg_layer1.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Players/bunny2_ready.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Background/bg_layer4.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Background/bg_layer3.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Milky Coffee.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://GFX/Enemies/cloud.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Enemies/spikeMan_stand.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Items/bronze_1.png" type="Texture" id=9]
+[ext_resource path="res://UI/blue_button12.png" type="Texture" id=10]
+[ext_resource path="res://UI/blue_button11.png" type="Texture" id=11]
+[ext_resource path="res://Titlegame.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+outline_color = Color( 0.729412, 0.729412, 0.729412, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.603922 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 75
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 80
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 129
+font_data = ExtResource( 6 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="Sky" type="Sprite" parent="BG"]
+position = Vector2( 961, 457 )
+texture = ExtResource( 2 )
+
+[node name="fartest" type="Sprite" parent="BG"]
+position = Vector2( 960, 456 )
+texture = ExtResource( 1 )
+
+[node name="middle" type="Sprite" parent="BG"]
+position = Vector2( 982, 390 )
+texture = ExtResource( 5 )
+
+[node name="front" type="Sprite" parent="BG"]
+position = Vector2( 964, 547 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -659.0
+margin_top = 116.0
+margin_right = 693.0
+margin_bottom = 331.0
+custom_colors/font_color = Color( 0.729412, 0.301961, 0.752941, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Tim The Bunny"
+align = 1
+
+[node name="LeftPanel" type="Panel" parent="."]
+margin_left = 204.0
+margin_top = 677.0
+margin_right = 921.0
+margin_bottom = 1062.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="spacebar" type="Panel" parent="LeftPanel"]
+margin_left = 77.0
+margin_top = 267.0
+margin_right = 374.0
+margin_bottom = 348.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="space" type="Label" parent="LeftPanel/spacebar"]
+margin_left = 46.0
+margin_top = 7.0
+margin_right = 242.0
+margin_bottom = 88.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "SPACE"
+align = 1
+valign = 1
+
+[node name="jump" type="Label" parent="LeftPanel/spacebar"]
+margin_left = 327.0
+margin_top = 1.0
+margin_right = 514.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 5 )
+text = "= Jump"
+
+[node name="keyA" type="Panel" parent="LeftPanel"]
+margin_left = 85.0
+margin_top = 172.0
+margin_right = 158.0
+margin_bottom = 245.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Label" type="Label" parent="LeftPanel/keyA"]
+margin_left = 12.0
+margin_top = -1.0
+margin_right = 57.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "A"
+
+[node name="keyD" type="Panel" parent="LeftPanel"]
+margin_left = 297.0
+margin_top = 174.0
+margin_right = 370.0
+margin_bottom = 247.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Label" type="Label" parent="LeftPanel/keyD"]
+margin_left = 12.0
+margin_top = -1.0
+margin_right = 57.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "D"
+
+[node name="jump" type="Label" parent="LeftPanel"]
+margin_left = 410.0
+margin_top = 181.0
+margin_right = 580.0
+margin_bottom = 246.0
+custom_fonts/font = SubResource( 5 )
+text = "= Move"
+
+[node name="jump2" type="Label" parent="LeftPanel"]
+margin_left = 200.0
+margin_top = 177.0
+margin_right = 256.0
+margin_bottom = 242.0
+custom_fonts/font = SubResource( 5 )
+text = "or"
+
+[node name="Label" type="Label" parent="LeftPanel"]
+margin_left = 38.0
+margin_top = 24.0
+margin_right = 369.0
+margin_bottom = 110.0
+custom_colors/font_color = Color( 0.968627, 0.976471, 0.0313726, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Controls:"
+
+[node name="RightPanel" type="Panel" parent="."]
+margin_left = 1044.0
+margin_top = 676.0
+margin_right = 1761.0
+margin_bottom = 1061.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Enemy" type="Label" parent="RightPanel"]
+margin_left = 467.0
+margin_top = 140.0
+margin_right = 680.0
+margin_bottom = 205.0
+custom_fonts/font = SubResource( 5 )
+text = "= Enemy"
+
+[node name="enemy" type="TextureRect" parent="RightPanel/Enemy"]
+margin_left = -49.0
+margin_top = -26.0
+margin_right = -4.0
+margin_bottom = 52.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="enemy2" type="TextureRect" parent="RightPanel/Enemy"]
+margin_left = -149.0
+margin_top = -8.0
+margin_right = -55.0
+margin_bottom = 52.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="You" type="Label" parent="RightPanel"]
+margin_left = 115.0
+margin_top = 140.0
+margin_right = 240.0
+margin_bottom = 205.0
+custom_fonts/font = SubResource( 5 )
+text = "=You"
+
+[node name="you" type="TextureRect" parent="RightPanel/You"]
+margin_left = -65.0
+margin_top = -30.0
+margin_right = -8.0
+margin_bottom = 60.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Item" type="Label" parent="RightPanel"]
+margin_left = 30.0
+margin_top = 16.0
+margin_right = 260.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 0.968627, 0.976471, 0.0313726, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Items:"
+
+[node name="Coin" type="Label" parent="RightPanel"]
+margin_left = 138.0
+margin_top = 262.0
+margin_right = 703.0
+margin_bottom = 327.0
+custom_fonts/font = SubResource( 9 )
+text = "Collect to gain point"
+
+[node name="TextureRect" type="TextureRect" parent="RightPanel/Coin"]
+margin_left = -96.0
+margin_top = -10.0
+margin_right = -25.0
+margin_bottom = 61.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Playbutton" type="TextureButton" parent="."]
+margin_left = 573.0
+margin_top = 403.0
+margin_right = 940.0
+margin_bottom = 568.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Playbutton"]
+anchor_left = 0.202
+anchor_top = 0.068
+anchor_right = 0.775
+anchor_bottom = 0.853
+margin_left = 0.189995
+margin_top = -0.0360003
+margin_right = 0.125
+margin_bottom = 0.0189972
+custom_fonts/font = SubResource( 10 )
+text = "Play"
+align = 1
+
+[node name="Quitbutton" type="TextureButton" parent="."]
+margin_left = 1011.0
+margin_top = 403.0
+margin_right = 1366.0
+margin_bottom = 568.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Quitbutton"]
+anchor_left = 0.202
+anchor_top = 0.068
+anchor_right = 0.775
+anchor_bottom = 0.853
+margin_left = 0.189995
+margin_top = -0.0360003
+margin_right = 0.125
+margin_bottom = 0.0189972
+custom_fonts/font = SubResource( 10 )
+text = "Quit"
+align = 1
+
+[connection signal="pressed" from="Playbutton" to="." method="_on_Playbutton_pressed"]
+[connection signal="pressed" from="Quitbutton" to="." method="_on_Quitbutton_pressed"]
